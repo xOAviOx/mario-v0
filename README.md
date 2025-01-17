@@ -1,6 +1,6 @@
 # Platform Adventure Game
 
-A challenging platformer game built with Kaboom.js featuring multiple levels, enemies, and collectibles.
+A challenging platformer game built with JavaScript, HTML, and Library featuring multiple levels, enemies, and collectibles.
 
 ## 🎮 Play Now
 
