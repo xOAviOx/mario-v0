@@ -17,18 +17,18 @@ gameUtils.loadAssets();
 gameUtils.setGameGravity();
 
 scene("game", ({ levelId, coins } = { levelId: 0, coins: 0 }) => {
-  // add level to scene
+  //  level to scene
   const level = addLevel(LEVELS[levelId ?? 0], levelConf);
 
-  // define player object
+  //  player object
   const player = add([
     sprite("boy"),
     pos(0, 0),
     area(),
     scale(1),
-    // makes it fall to gravity and jumpable
+    //  gravity and jumpable
     body(),
-    // the custom component we defined above
+    // the custom component
     big(),
     anchor("bot"),
   ]);
@@ -54,7 +54,7 @@ scene("game", ({ levelId, coins } = { levelId: 0, coins: 0 }) => {
     setCamPos(player.pos);
   });
 
-  // if player onCollide with any obj with "danger" tag, lose
+  //  player onCollide with any obj with "danger" 
   player.onCollide("danger", () => {
     go("lose");
     play("hit");
@@ -90,7 +90,7 @@ scene("game", ({ levelId, coins } = { levelId: 0, coins: 0 }) => {
   });
   let hasApple = false;
 
-  // grow an apple if player's head bumps into an obj with "prize" tag
+  // grow an apple if player's head bumps into an obj
   player.onHeadbutt((obj) => {
     if (obj.is("prize") && !hasApple) {
       const apple = level.spawn("#", obj.tilePos.sub(0, 1));
@@ -103,7 +103,7 @@ scene("game", ({ levelId, coins } = { levelId: 0, coins: 0 }) => {
   // player grows big onCollide with an "apple" obj
   player.onCollide("apple", (a) => {
     destroy(a);
-    // as we defined in the big() component
+    // as  defined in the big() 
     player.biggify(3);
     hasApple = false;
     play("powerup");
@@ -130,7 +130,7 @@ scene("game", ({ levelId, coins } = { levelId: 0, coins: 0 }) => {
   const coinsLabel = add([text(coins), pos(24, 24), fixed()]);
 
   function jump() {
-    // these 2 functions are provided by body() component
+    // functions are provided by body() component
     if (player.isGrounded()) {
       player.jump(JUMP_FORCE);
     }
@@ -169,12 +169,12 @@ scene("game", ({ levelId, coins } = { levelId: 0, coins: 0 }) => {
 });
 
 scene("lose", () => {
-  add([text("You Lose")]);
+  add([text("OH OH YOU LOST TRY AGAIN!! (Press any key to restart)")]);
   onKeyPress(() => go("game"));
 });
 
 scene("win", () => {
-  add([text("You Win")]);
+  add([text("YAYYY YOU WONNNN!!!! (Press any key to restart)")]);
   onKeyPress(() => go("game"));
 });
 
