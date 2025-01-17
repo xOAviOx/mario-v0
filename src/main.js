@@ -22,7 +22,7 @@ scene("game", ({ levelId, coins } = { levelId: 0, coins: 0 }) => {
 
   //  player object
   const player = add([
-    sprite("boy"),
+    sprite("bean"),
     pos(0, 0),
     area(),
     scale(1),
@@ -54,7 +54,7 @@ scene("game", ({ levelId, coins } = { levelId: 0, coins: 0 }) => {
     setCamPos(player.pos);
   });
 
-  //  player onCollide with any obj with "danger" 
+  //  player onCollide with any obj with "danger"
   player.onCollide("danger", () => {
     go("lose");
     play("hit");
@@ -103,7 +103,7 @@ scene("game", ({ levelId, coins } = { levelId: 0, coins: 0 }) => {
   // player grows big onCollide with an "apple" obj
   player.onCollide("apple", (a) => {
     destroy(a);
-    // as  defined in the big() 
+    // as  defined in the big()
     player.biggify(3);
     hasApple = false;
     play("powerup");
