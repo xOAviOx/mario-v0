@@ -1,3 +1,12 @@
+import { big } from "./objFunc";
+import {
+  JUMP_FORCE,
+  FALL_DEATH,
+  LEVELS,
+  MOVE_SPEED,
+  levelConf,
+} from "./stages.js";
+
 export const gameScene = scene(
   "game",
   ({ levelId, coins } = { levelId: 0, coins: 0 }) => {
@@ -155,5 +164,11 @@ export const gameScene = scene(
 // lose scene
 export const loseScene = scene("lose", () => {
   add([text("You Lose")]);
+  onKeyPress(() => go("game"));
+});
+
+//Win scene
+export const winScene = scene("win", () => {
+  add([text("You Win")]);
   onKeyPress(() => go("game"));
 });

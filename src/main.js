@@ -18,9 +18,6 @@ gameUtils.setGameGravity();
 
 
 
-scene("win", () => {
-  add([text("You Win")]);
-  onKeyPress(() => go("game"));
-});
+
 
 go("game");
