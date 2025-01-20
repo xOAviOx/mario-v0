@@ -71,7 +71,7 @@ scene("game", ({ levelId, coins } = { levelId: 0, coins: 0 }) => {
       go("win");
     }
   });
-
+//jump high 
   player.onGround((l) => {
     if (l.is("enemy")) {
       player.jump(JUMP_FORCE * 1.5);
