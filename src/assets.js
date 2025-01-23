@@ -23,7 +23,7 @@ function loadAssets() {
 function setGameGravity() {
   setGravity(3200);
 }
-
+//exporting
 export const gameUtils = {
   loadAssets,
   setGameGravity,
