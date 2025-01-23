@@ -18,6 +18,7 @@ function loadAssets() {
   loadSound("portal", "/examples/sounds/portal.mp3");
   loadSprite("pineapple", "/sprites/pineapple.png");
 }
+//gravity
 
 function setGameGravity() {
   setGravity(3200);
