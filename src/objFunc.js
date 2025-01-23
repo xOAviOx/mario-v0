@@ -24,7 +24,7 @@ export function big() {
   return {
     // component id / name
     id: "big",
-    // it requires the scale component
+    //  requires the scale component
     require: ["scale"],
     // this runs every frame
     update() {
