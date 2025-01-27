@@ -16,7 +16,7 @@ export function patrol(speed = 60, dir = 1) {
   };
 }
 
-// custom component that makes stuff grow big
+// custom component that makes stuff grow big :
 export function big() {
   let timer = 0;
   let isBig = false;
